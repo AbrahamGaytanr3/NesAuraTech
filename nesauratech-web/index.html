@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NesAura Tech</title>
+<meta name="description" content="NesAura Tech: páginas web, software a la medida, asistentes de IA y automatización para negocios en León, Guanajuato.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<meta property="og:title" content="NesAura Tech">
+<meta property="og:description" content="Páginas web, software a la medida, asistentes de IA y automatización para negocios en León, Guanajuato.">
+<meta property="og:image" content="https://abrahamgaytanr3.github.io/nesauratech/lamina-crecimiento.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E5F1EB">
+<link rel="icon" type="image/png" href="logo-n.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+/* Layout: banda azul con el cotizador en vivo como pieza principal; tarifario en filas;
+   el nombre NesAura armado con tipografía; promociones; canales de contacto en lista. */
+:root{
+  --navy:#1B2D46;
+  --navy-2:#22385A;
+  --emerald:#2C8365;
+  --mint:#E1EFE8;
+  --paper:#F8FBF9;
+  --surface:#FFFFFF;
+  --ink:#121C2C;
+  --muted:#56657A;
+  --line:#D3E2DA;
+  --accent:#2C8365;
+  --accent-ink:#1F6B51;
+  --on-accent:#FFFFFF;
+  --tile:#FFFFFF;
+  --hero-bg:#E5F1EB;
+  --hero-ink:#1B2D46;
+  --hero-muted:#4C6074;
+  color-scheme:light;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--hero-bg)}
+img{height:auto}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.05;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+
+/* Encabezado */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--hero-bg);border-bottom:1px solid rgba(27,45,70,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--hero-ink)}
+.logo-tile{background:var(--tile);border-radius:12px;display:grid;place-items:center;flex:none}
+.brand .logo-tile{width:44px;height:44px;box-shadow:0 1px 0 rgba(27,45,70,.08),0 0 0 1px var(--line)}
+.brand .logo-tile img{width:38px;height:38px;display:block}
+.brand-name{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.02em}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--hero-muted);padding:8px 12px;border-radius:8px}
+.nav ul a:hover{color:var(--hero-ink);background:rgba(27,45,70,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:1rem;text-decoration:none;border:0;cursor:pointer;border-radius:12px;padding:14px 22px;transition:background .15s ease}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--accent);color:var(--on-accent)}
+.btn-wa:hover{background:var(--accent-ink)}
+.nav .btn{padding:10px 16px;font-size:.95rem}
+@media (max-width:880px){.nav ul{display:none}}
+@media (max-width:420px){.nav .btn span{display:none}.nav .btn{padding:10px 12px}}
+
+/* Hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden}
+.hero .wrap{padding-block:64px 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.hero .wrap > *{min-width:0}
+.pixels{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero .wrap{z-index:1}
+.pixels i{position:absolute;background:var(--emerald);border-radius:3px}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.4rem);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.hero h1 .l2{display:block;color:var(--accent-ink)}
+.hero .lead{color:var(--hero-muted);font-size:1.2rem;max-width:32em;margin-top:26px}
+.hero .place{display:flex;align-items:center;gap:10px;margin-top:30px;color:var(--hero-ink);font-weight:600}
+.hero .place svg{width:20px;height:20px;color:var(--accent)}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px;padding-block:44px 56px}}
+
+/* Cotizador */
+.quote{background:var(--surface);color:var(--ink);border-radius:20px;padding:26px;box-shadow:0 24px 60px -28px rgba(27,45,70,.32);border:1px solid var(--line)}
+.quote-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.quote h2{font-size:1.55rem;font-weight:700;letter-spacing:-.02em}
+.quote-head span{color:var(--muted);font-size:.92rem}
+.items{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
+.item{position:relative}
+.item input{position:absolute;opacity:0;width:1px;height:1px}
+.item label{display:grid;grid-template-columns:24px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;transition:border-color .15s ease, background .15s ease}
+.item label:hover{border-color:var(--accent)}
+.item .box{width:24px;height:24px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;transition:background .15s ease,border-color .15s ease}
+.item .box svg{width:14px;height:14px;color:var(--on-accent);opacity:0}
+.item .nm{font-weight:600;line-height:1.3}
+.item .pr{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.item input:checked + label{border-color:var(--accent);background:var(--mint)}
+.item input:checked + label .box{background:var(--accent);border-color:var(--accent)}
+.item input:checked + label .box svg{opacity:1}
+.item input:focus-visible + label{outline:3px solid var(--accent);outline-offset:2px}
+.total{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:18px;padding-top:16px;border-top:2px solid var(--ink)}
+.total p{color:var(--muted);font-size:.92rem;max-width:20em}
+.total b{font-family:var(--display);font-weight:800;font-size:2.2rem;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.total b small{font-size:.9rem;font-weight:600;letter-spacing:0;color:var(--muted);margin-left:4px}
+.extra{margin-top:10px;font-size:.92rem;color:var(--accent-ink);min-height:1.4em}
+.quote .btn{width:100%;margin-top:14px}
+.quote .alt{margin-top:10px;font-size:.88rem;color:var(--muted);text-align:center}
+.quote .alt b{color:var(--ink);user-select:all}
+
+/* Secciones */
+section{scroll-margin-top:84px}
+.band{padding-block:84px}
+.band.white{background:var(--surface);border-block:1px solid var(--line)}
+.sec-title{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:800;letter-spacing:-.035em;max-width:16em}
+.sec-intro{color:var(--muted);font-size:1.12rem;max-width:36em;margin-top:14px}
+
+/* Tarifario */
+.rates{list-style:none;padding:0;margin:44px 0 0;border-top:2px solid var(--ink)}
+.rate{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:16px 40px;align-items:start;padding-block:28px;border-bottom:1px solid var(--line)}
+.rate h3{font-size:1.45rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.rate p{color:var(--muted);max-width:34em}
+.rate .amt{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.03em;text-align:right;font-variant-numeric:tabular-nums;line-height:1}
+.rate .amt small{display:block;font-family:var(--body);font-size:.85rem;font-weight:500;letter-spacing:0;color:var(--muted);margin-top:6px}
+.rate .amt.q{font-size:1.4rem}
+.months{grid-column:2 / 4;margin-top:4px}
+.months .bar{display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.months .bar span{height:30px;border-radius:5px;background:#C9D6E3;display:grid;place-items:center;font-size:.72rem;font-weight:600;color:var(--navy)}
+.months .bar span.free{background:var(--accent);color:var(--on-accent)}
+.months .legend{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:10px;font-size:.92rem;color:var(--muted)}
+.months .legend span{display:inline-flex;align-items:center;gap:8px}
+.months .legend span::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--accent)}
+.months .legend span.paid::before{background:#C9D6E3}
+@media (max-width:820px){
+  .rate{grid-template-columns:1fr auto;gap:10px 20px}
+  .rate p{grid-column:1 / -1;grid-row:2}
+  .rate .amt{grid-column:2;grid-row:1}
+  .months{grid-column:1 / -1}
+  .months .bar span{font-size:0;height:22px}
+}
+
+/* Nombre */
+.name-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.name-grid > *{min-width:0}
+.word{font-family:var(--display);font-weight:800;letter-spacing:-.05em;line-height:.9;font-size:clamp(3rem,7.5vw,6.4rem);display:flex;flex-direction:column}
+.word span{color:#7FAE98}
+.word span b{color:var(--ink);font-weight:800}
+.word span:nth-child(2) b{color:var(--accent)}
+.roots{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:4px 28px;margin-top:22px;font-size:1.15rem;font-weight:600}
+.roots span b{color:var(--accent-ink)}
+.name-copy p{color:var(--muted);max-width:34em}
+.name-copy p + p{margin-top:14px}
+.name-copy h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-.025em;margin-bottom:16px}
+@media (max-width:900px){.name-grid{grid-template-columns:1fr;gap:28px}}
+
+/* Promociones */
+.promos{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px;margin-top:40px;align-items:start}
+.promos figure{margin:0}
+.promos img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.promos figcaption{margin-top:12px;color:var(--muted)}
+.promos figcaption b{color:var(--ink)}
+@media (max-width:760px){.promos{grid-template-columns:1fr}}
+
+/* Contacto */
+.channels{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;border-top:2px solid var(--ink)}
+.channels li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:16px;align-items:center;padding-block:20px;border-bottom:1px solid var(--line)}
+.channels .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);color:var(--accent-ink);display:grid;place-items:center}
+.channels .ic svg{width:22px;height:22px}
+.channels .k{font-size:.9rem;color:var(--muted)}
+.channels .v{font-family:var(--display);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;overflow-wrap:anywhere;user-select:all;text-decoration:none;display:block}
+.channels a.v:hover{color:var(--accent-ink)}
+.mini{font:inherit;font-size:.9rem;font-weight:600;color:var(--accent-ink);background:none;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.mini:hover{border-color:var(--accent)}
+@media (max-width:760px){.channels{grid-template-columns:1fr}}
+
+footer{background:var(--hero-bg);color:var(--hero-muted);border-top:1px solid var(--line)}
+footer .wrap{padding-block:32px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+footer .brand .logo-tile{width:38px;height:38px}
+footer .brand .logo-tile img{width:32px;height:32px}
+footer small{font-size:.92rem}
+
+/* Lámina de crecimiento */
+.hero .wrap.plate{display:block;padding-block:0 64px}
+.plate figure{margin:0}
+.plate img{display:block;width:100%;max-width:100%;height:auto;border-radius:18px;border:1px solid rgba(27,45,70,.08)}
+@media (max-width:700px){.plate img{aspect-ratio:4/3;object-fit:cover;object-position:right center}}
+</style>
+<style>[hidden]{display:none!important} img{max-width:100%}</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="NesAura Tech, inicio">
+      <span class="logo-tile"><img src="logo-n.png" width="38" height="38" alt="Logotipo de NesAura Tech"></span>
+      <span class="brand-name">NesAura Tech</span>
+    </a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#promociones">Promociones</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn btn-wa" href="https://wa.me/524791395434" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="pixels" aria-hidden="true">
+      <i style="width:26px;height:26px;top:8%;left:3%;opacity:.55"></i>
+      <i style="width:16px;height:16px;top:calc(8% + 34px);left:calc(3% - 18px);opacity:.25"></i>
+      <i style="width:12px;height:12px;top:calc(8% + 56px);left:calc(3% + 8px);opacity:.15"></i>
+      <i style="width:22px;height:22px;bottom:10%;right:2%;opacity:.5"></i>
+      <i style="width:12px;height:12px;bottom:calc(10% + 30px);right:calc(2% + 28px);opacity:.2"></i>
+    </div>
+    <div class="wrap">
+      <div>
+        <h1>Tu negocio,<span class="l2">listo para crecer.</span></h1>
+        <p class="lead">Hacemos páginas web, software a la medida, asistentes con inteligencia artificial y automatización para negocios del Bajío. Elige lo que necesitas y ve el precio al momento.</p>
+        <p class="place">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Desde León, Guanajuato
+        </p>
+      </div>
+
+      <form class="quote" id="cotizador" aria-labelledby="q-title">
+        <div class="quote-head">
+          <h2 id="q-title">Arma tu cotización</h2>
+          <span>Precios en MXN</span>
+        </div>
+        <ul class="items">
+          <li class="item"><input type="checkbox" id="s-web" data-name="Diseño de página web" data-price="2499" checked><label for="s-web"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="nm">Página web</span><span class="pr">$2,499</span></label></li>
+          <li class="item"><input type="checkbox" id="s-ia" data-name="Asistente de IA para negocio" data-price="599"><label for="s-ia"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="nm">Asistente de IA</span><span class="pr">$599</span></label></li>
+          <li class="item"><input type="checkbox" id="s-pos" data-name="Automatización de punto de venta con IA" data-price="1200"><label for="s-pos"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="nm">Automatizar punto de venta con IA</span><span class="pr">$1,200</span></label></li>
+          <li class="item"><input type="checkbox" id="s-vb" data-name="VirtualBox para estudiantes y laboratorios" data-price="599"><label for="s-vb"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="nm">VirtualBox para prácticas</span><span class="pr">$599</span></label></li>
+          <li class="item"><input type="checkbox" id="s-sw" data-name="Software a la medida" data-price="0"><label for="s-sw"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="nm">Software a la medida</span><span class="pr">Se cotiza</span></label></li>
+        </ul>
+        <div class="total">
+          <p id="t-note">Total aproximado de lo que elegiste</p>
+          <b id="t-amt">$2,499<small>MXN</small></b>
+        </div>
+        <p class="extra" id="t-extra">Incluye 3 meses de hosting gratis. Después, $99 al mes.</p>
+        <a class="btn btn-wa" id="q-send" href="https://wa.me/524791395434" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          Enviar cotización por WhatsApp
+        </a>
+        <p class="alt">Si no se abre WhatsApp, escríbenos al <b>479 139 5434</b></p>
+      </form>
+    </div>
+    <div class="wrap plate">
+      <figure>
+        <img src="lamina-crecimiento.png" width="3000" height="1200" alt="Ilustración de NesAura Tech: una retícula de cuadros que se llenan de verde formando una curva ascendente, como un negocio que crece paso a paso.">
+      </figure>
+    </div>
+  </section>
+
+  <section class="band" id="servicios">
+    <div class="wrap">
+      <h2 class="sec-title">Servicios con precio claro desde el inicio</h2>
+      <p class="sec-intro">Sabes cuánto vas a pagar antes de empezar. Si necesitas algo que no está aquí, lo cotizamos contigo.</p>
+      <ul class="rates">
+        <li class="rate">
+          <h3>Diseño de página web</h3>
+          <p>Una página profesional para que tus clientes te encuentren, vean lo que ofreces y te escriban directo.</p>
+          <div class="amt">$2,499<small>pago único</small></div>
+          <div class="months" aria-label="Hosting: meses 1 a 3 gratis, del mes 4 en adelante 99 pesos al mes">
+            <div class="bar" aria-hidden="true">
+              <span class="free">1</span><span class="free">2</span><span class="free">3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+            </div>
+            <div class="legend"><span>Hosting gratis los primeros 3 meses</span><span class="paid">Después, $99 al mes</span></div>
+          </div>
+        </li>
+        <li class="rate">
+          <h3>Software a la medida</h3>
+          <p>Sistemas, apps y herramientas hechas para la forma en que trabaja tu negocio. El precio depende de lo que necesites.</p>
+          <div class="amt q">Se cotiza<small>según tu proyecto</small></div>
+        </li>
+        <li class="rate">
+          <h3>Automatización de punto de venta con IA</h3>
+          <p>Deja que la inteligencia artificial haga las tareas repetitivas de tu punto de venta y gana tiempo para atender.</p>
+          <div class="amt">$1,200<small>MXN</small></div>
+        </li>
+        <li class="rate">
+          <h3>Asistente de IA para tu negocio</h3>
+          <p>Un asistente con inteligencia artificial que te ayuda a responder y atender a tus clientes.</p>
+          <div class="amt">$599<small>MXN</small></div>
+        </li>
+        <li class="rate">
+          <h3>VirtualBox para estudiantes y laboratorios</h3>
+          <p>Instalamos y configuramos máquinas virtuales con Windows o Linux para tus prácticas de redes, sistemas y programación.</p>
+          <div class="amt">$599<small>MXN</small></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band white" id="nosotros">
+    <div class="wrap name-grid">
+      <div>
+        <p class="word" aria-label="NesAura"><span><b>N</b>aomi</span><span><b>Es</b>meralda</span><span><b>Aura</b></span></p>
+      </div>
+      <div class="name-copy">
+        <h2>Un nombre que viene de casa</h2>
+        <p>NesAura junta los nombres de Naomi, Esmeralda y Aura. Es un emprendimiento familiar que nació en León con una idea sencilla: que cualquier negocio de la región tenga acceso a buena tecnología.</p>
+        <p>Trabajas directo con quien hace tu proyecto, con precios que conoces desde el principio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="promociones">
+    <div class="wrap">
+      <h2 class="sec-title">Promociones</h2>
+      <div class="promos">
+        <figure>
+          <img src="anuncio-virtualbox.jpg" width="1254" height="1254" loading="lazy" alt="Anuncio de NesAura Tech: VirtualBox para estudiantes y laboratorios, 599 pesos.">
+          <figcaption><b>VirtualBox para estudiantes y laboratorios.</b> Instalación y configuración por $599.</figcaption>
+        </figure>
+        <figure>
+          <img src="anuncio-software.jpg" width="941" height="1672" loading="lazy" alt="Anuncio de NesAura Tech: desarrollo de software con cotización personalizada.">
+          <figcaption><b>Desarrollo de software.</b> Cotización según tu idea.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white" id="contacto">
+    <div class="wrap">
+      <h2 class="sec-title">Platiquemos de tu negocio</h2>
+      <p class="sec-intro">Escríbenos por el medio que prefieras. Respondemos con gusto tus dudas antes de que contrates.</p>
+      <ul class="channels">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span>
+          <div><span class="k">WhatsApp</span><a class="v" href="https://wa.me/524791395434" target="_blank" rel="noopener">479 139 5434</a></div>
+          <button class="mini" type="button" data-copy="4791395434">Copiar</button>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+          <div><span class="k">Correo</span><span class="v">nesauratech@gmail.com</span></div>
+          <button class="mini" type="button" data-copy="nesauratech@gmail.com">Copiar</button>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A4.5 4.5 0 0 0 8 7.5V10H5.5v3.5H8V21h3.5v-7.5H14l.5-3.5h-3V7.8c0-.7.5-1.3 1.3-1.3H15z"/></svg></span>
+          <div><span class="k">Facebook</span><a class="v" href="https://www.facebook.com/share/1EM7CuzgJU/" target="_blank" rel="noopener">NesAura Tech</a></div>
+          <a class="mini" href="https://www.facebook.com/share/1EM7CuzgJU/" target="_blank" rel="noopener">Abrir</a>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>
+          <div><span class="k">Instagram</span><a class="v" href="https://www.instagram.com/nesauratech" target="_blank" rel="noopener">@nesauratech</a></div>
+          <a class="mini" href="https://www.instagram.com/nesauratech" target="_blank" rel="noopener">Abrir</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="NesAura Tech, inicio">
+      <span class="logo-tile"><img src="logo-n.png" width="32" height="32" alt="Logotipo de NesAura Tech"></span>
+      <span class="brand-name">NesAura Tech</span>
+    </a>
+    <small>León, Guanajuato, México. © 2026 NesAura Tech</small>
+  </div>
+</footer>
+
+<script>
+const WA = "524791395434";
+const fmt = n => "$" + n.toLocaleString("es-MX");
+const boxes = [...document.querySelectorAll('#cotizador input[type=checkbox]')];
+const amt = document.getElementById('t-amt');
+const note = document.getElementById('t-note');
+const extra = document.getElementById('t-extra');
+const send = document.getElementById('q-send');
+
+function update(){
+  const sel = boxes.filter(b => b.checked);
+  const total = sel.reduce((s,b) => s + Number(b.dataset.price), 0);
+  const sw = sel.some(b => b.id === 's-sw');
+  const web = sel.some(b => b.id === 's-web');
+  amt.innerHTML = fmt(total) + '<small>MXN</small>';
+  note.textContent = !sel.length ? 'Elige uno o más servicios'
+    : sw ? 'Total aproximado, más el software que cotizaremos contigo'
+    : 'Total aproximado de lo que elegiste';
+  extra.textContent = web ? 'Incluye 3 meses de hosting gratis. Después, $99 al mes.' : '';
+  let msg = 'Hola NesAura Tech, me interesa cotizar:';
+  sel.forEach(b => { msg += '\n- ' + b.dataset.name + (Number(b.dataset.price) ? ' (' + fmt(Number(b.dataset.price)) + ')' : ''); });
+  if (!sel.length) msg = 'Hola NesAura Tech, quiero información de sus servicios.';
+  else if (total) msg += '\nTotal aproximado: ' + fmt(total) + ' MXN' + (sw ? ' más el software' : '');
+  send.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+}
+boxes.forEach(b => b.addEventListener('change', update));
+document.getElementById('cotizador').addEventListener('submit', e => e.preventDefault());
+update();
+
+document.querySelectorAll('[data-copy]').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(btn.dataset.copy); btn.textContent = 'Copiado'; }
+    catch (err) { btn.textContent = 'Selecciónalo'; }
+    setTimeout(() => { btn.textContent = 'Copiar'; }, 2000);
+  });
+});
+</script>
+
+</body>
+</html>
